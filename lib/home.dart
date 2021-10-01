@@ -36,14 +36,20 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         title: Text('Dynamic List View'),
       ),
-      body: ListView.builder(
-        itemCount: UserModel.items.length,
-        itemBuilder: (context, index) {
-          return UserWidget(
-            item: UserModel.items[index],
-          );
-        },
-      ),
+      body: (UserModel.items.isNotEmpty)
+          ? ListView.builder(
+              itemCount: UserModel.items.length,
+              itemBuilder: (context, index) {
+                return UserWidget(
+                  item: UserModel.items[index],
+                );
+              },
+            )
+          : Center(
+              child: CircularProgressIndicator(
+                color: Colors.indigo,
+              ),
+            ),
     );
   }
 }
