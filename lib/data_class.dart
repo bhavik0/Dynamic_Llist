@@ -33,12 +33,5 @@ class User {
 
 class UserModel {
   // static final items = [
-  static List<User> items = [
-    User(
-        id: 1,
-        name: "bhavik",
-        email: "bhaviklimbani1@Gmail.com",
-        gender: "Male",
-        profile: "http://dummyimage.com/122x100.png/cc0000/ffffff")
-  ];
+  static List<User> items = [];
 }
