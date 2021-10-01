@@ -10,7 +10,7 @@ class User {
       required this.profile});
 }
 
-class CatalogModel {
+class UserModel {
   static final items = [
     User(
         id: 1,
