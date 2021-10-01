@@ -1,3 +1,5 @@
+import 'package:dlist/data_class.dart';
+import 'package:dlist/user_widget.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,6 +15,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Dynamic List View'),
+      ),
+      body: ListView.builder(
+        itemCount: UserModel.items.length,
+        itemBuilder: (context, index) {
+          return UserWidget(
+            item: UserModel.items[index],
+          );
+        },
       ),
     );
   }
