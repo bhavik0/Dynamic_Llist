@@ -12,15 +12,16 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(11, (index) => UserModel.items[0]);
     return Scaffold(
       appBar: AppBar(
         title: Text('Dynamic List View'),
       ),
       body: ListView.builder(
-        itemCount: UserModel.items.length,
+        itemCount: dummyList.length,
         itemBuilder: (context, index) {
           return UserWidget(
-            item: UserModel.items[index],
+            item: dummyList[index],
           );
         },
       ),
